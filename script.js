@@ -1,5 +1,5 @@
 const options = {
-    key: 'PsLAtXpsPTZexBwUkO7Mx5I', // REPLACE WITH YOUR KEY !!!
+    key: 'gB4cSUS30RAGtgeokIWAcEs8cgxQP5tz', // REPLACE WITH YOUR KEY !!!
 
     // Tip: Use verbose true for nice console output
     // verbose: true
