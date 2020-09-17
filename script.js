@@ -1,30 +1,26 @@
 const options = {
+    // Required: API key
     key: 'gB4cSUS30RAGtgeokIWAcEs8cgxQP5tz', // REPLACE WITH YOUR KEY !!!
 
-    // Tip: Use verbose true for nice console output
-    // verbose: true
+    // Put additional console output
+    verbose: true,
+
+    // Optional: Initial state of the map
+    lat: 50.4,
+    lon: 14.3,
+    zoom: 5,
 };
 
+// Initialize Windy API
 windyInit(options, windyAPI => {
-    const { store, broadcast } = windyAPI;
-    // broadcast is main Windy's event emmiter that
-    // let you know what is happening inside
+    // windyAPI is ready, and contain 'map', 'store',
+    // 'picker' and other usefull stuff
 
-    // Change overlays programatically
-    const overlays = ['rain', 'wind', 'temp', 'clouds'];
-    let i = 0;
+    const { map } = windyAPI;
+    // .map is instance of Leaflet map
 
-    setInterval(() => {
-        i = i === 3 ? 0 : i + 1;
-        store.set('overlay', overlays[i]);
-    }, 800);
-
-    // Observe the most important broadcasts
-    broadcast.on('paramsChanged', params => {
-        console.log('Params changed:', params);
-    });
-
-    broadcast.on('redrawFinished', params => {
-        console.log('Map was rendered:', params);
-    });
+    L.popup()
+        .setLatLng([50.4, 14.3])
+        .setContent('Hello World')
+        .openOn(map);
 });
