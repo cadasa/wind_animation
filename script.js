@@ -21,6 +21,6 @@ windyInit(options, windyAPI => {
 
     L.popup()
         .setLatLng([15.8, 108.1])
-        .setContent('Bão s? 5 - Noul')
+        .setContent('Bão No. 5 - Noul')
         .openOn(map);
 });
